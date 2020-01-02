@@ -1,8 +1,14 @@
 'use strict';
 
-function hybrid_operation_to_uneven(collection) {
+function getSum(total, num) {
+  if (num % 2 !== 0) {
+    return total + (num * 3 + 5);
+  }
+  return total;
+}
 
-  //在这里写入代码
+function hybrid_operation_to_uneven(collection) {
+  return collection.reduce(getSum, 0);
 }
 
 module.exports = hybrid_operation_to_uneven;

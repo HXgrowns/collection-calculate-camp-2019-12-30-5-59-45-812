@@ -1,7 +1,19 @@
 'use strict';
 
 function compare_collections(collection_a, collection_b) {
-  //在这里写入代码
+  if (collection_a.length !== collection_b.length) {
+    return false;
+  }
+  var flag;
+  for (var i = 0, len = collection_a.length; i < len; i++) {
+    if (collection_a[i] === collection_b[i]) {
+      flag = true;
+    } else {
+      flag = false;
+      return flag;
+    }
+  }
+  return flag;
 }
 
 module.exports = compare_collections;
