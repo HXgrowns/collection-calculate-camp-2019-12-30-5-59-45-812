@@ -1,32 +1,29 @@
 'use strict';
-var even_group_calculate_average = function (collection) {
-  var evenArray = getEvenArray(collection);
+const even_group_calculate_average = (collection) => {
+  let evenArray = getEvenArray(collection);
   if (!evenArray.length) {
     return [0];
   }
-
-  var erArray = [];
-  for (var i = 0; i < 10; i++) {
+  let erArray = [];
+  for (let i = 0; i < 10; i++) {
     erArray[i] = [];
   }
-
-  for (var i = 0; i < evenArray.length; i++) {
-    var radix = calculate_radix(evenArray[i]);
-    erArray[radix].push(evenArray[i]);
-  }
-
-  var result = [];
-  for (var i = 0; i < erArray.length; i++) {
-    if (erArray[i].length !== 0) {
-      result.push(erArray[i].reduce(getSum, 0) / erArray[i].length);
+  evenArray.forEach((value) => {
+    let radix = calculate_radix(value);
+    erArray[radix].push(value);
+  });
+  let result = [];
+  erArray.forEach((value) => {
+    if (value.length !== 0) {
+      result.push(value.reduce(getSum, 0) / value.length);
     }
-  }
+  });
   return result;
 };
 
-function getEvenArray(collection) {
-  var evenArray = [];
-  for (var i = 1; i < collection.length; i += 2) {
+const getEvenArray = (collection) => {
+  let evenArray = [];
+  for (let i = 1, len = collection.length; i < len; i += 2) {
     if (collection[i] % 2 === 0) {
       evenArray.push(collection[i]);
     }
@@ -34,8 +31,8 @@ function getEvenArray(collection) {
   return evenArray;
 }
 
-function calculate_radix(num) {
-  var count = 0;
+const calculate_radix = (num) => {
+  let count = 0;
   while (num) {
     num = Math.floor(num / 10);
     count++;
@@ -43,7 +40,7 @@ function calculate_radix(num) {
   return count;
 }
 
-function getSum(total, num) {
+const getSum = (total, num) => {
   return total + num;
 }
 module.exports = even_group_calculate_average;

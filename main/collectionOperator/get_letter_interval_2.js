@@ -1,11 +1,11 @@
 'use strict';
-var letters = ["z", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k",
+const letters = ["z", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k",
   "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y"];
 
-function decTo26(num) {
-  var data = [];
+const decTo26 = (num) => {
+  let data = [];
   while (num > 0) {
-    var mod = num % 26;
+    let mod = num % 26;
     num = Math.floor(num / 26);
     if (mod === 0 && num > 0) {
       num--;
@@ -15,16 +15,16 @@ function decTo26(num) {
   return data.join("");
 }
 
-function get_letter_interval_2(number_a, number_b) {
-  var result = [];
-  var min = number_a;
-  var max = number_b;
+const get_letter_interval_2 = (number_a, number_b) => {
+  let result = [];
+  let min = number_a;
+  let max = number_b;
   if (number_a > number_b) {
     min = number_b;
     max = number_a;
   }
-  for (var i = min; i <= max; i++) {
-    var output = decTo26(i);
+  for (let i = min; i <= max; i++) {
+    let output = decTo26(i);
     result.push(output);
   }
   if (number_a > number_b) {

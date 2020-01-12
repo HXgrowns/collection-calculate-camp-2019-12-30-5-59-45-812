@@ -1,16 +1,16 @@
 'use strict';
 
-function getEvenArray(collection) {
-  var evenArray = [];
-  for (var i = 0; i < collection.length; i += 2) {
+const getEvenArray = (collection) => {
+  let evenArray = [];
+  for (let i = 0, len = collection.length; i < len; i += 2) {
     evenArray.push(collection[i]);
   }
   return evenArray;
 }
 
-var is_exist_element = function (collection, element) {
-  var evenArray = getEvenArray(collection);
-  for (var i = 0; i < evenArray.length; i++) {
+const is_exist_element = (collection, element) => {
+  let evenArray = getEvenArray(collection);
+  for (let i = 0, len = evenArray.length; i < len; i++) {
     if (evenArray[i] === element) {
       return true;
     }

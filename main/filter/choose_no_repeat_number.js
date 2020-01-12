@@ -1,11 +1,11 @@
 'use strict';
 
-function choose_no_repeat_number(collection) {
-  var map = new Map();
-  for (var i = 0, len = collection.length; i < len; i++) {
-    map.set(collection[i], 1);
-  }
-  var result = [];
+const choose_no_repeat_number = (collection) => {
+  let map = new Map();
+  collection.forEach((value) => {
+    map.set(value, 1);
+  });
+  let result = [];
   for (var key of map.keys()) {
     result.push(key);
   }

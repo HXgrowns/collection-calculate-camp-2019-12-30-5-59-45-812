@@ -1,14 +1,13 @@
 'use strict';
-
-function get_integer_interval_2(number_a, number_b) {
-  var min = number_a;
-  var max = number_b;
-  var result = [];
+const get_integer_interval_2 = (number_a, number_b) => {
+  let min = number_a;
+  let max = number_b;
+  let result = [];
   if (number_a > number_b) {
     min = number_b;
     max = number_a;
-  } 
-  for (var i = min; i <= max; i++) {
+  }
+  for (let i = min; i <= max; i++) {
     if (i % 2 === 0) {
       result.push(i);
     }
@@ -18,5 +17,4 @@ function get_integer_interval_2(number_a, number_b) {
   }
   return result;
 }
-
 module.exports = get_integer_interval_2;

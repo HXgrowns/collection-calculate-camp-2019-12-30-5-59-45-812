@@ -1,12 +1,12 @@
-function create_updated_collection(collection_a, object_b) {
-  for (let i = 0, len = collection_a.length; i < len; i++) {
+const create_updated_collection = (collection_a, object_b) => {
+  collection_a.forEach((aValue) => {
     for (let j = 0, len2 = object_b.value.length; j < len2; j++) {
-      if (collection_a[i].key === object_b.value[j]) {
-        collection_a[i].count--;
+      if (aValue.key === object_b.value[j]) {
+        aValue.count--;
         break;
       }
     }
-  }
+  });
   return collection_a;
 }
 

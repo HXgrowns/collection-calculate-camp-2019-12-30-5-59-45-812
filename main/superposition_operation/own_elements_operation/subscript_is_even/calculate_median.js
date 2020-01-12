@@ -1,5 +1,5 @@
 'use strict';
-function compute_median(collection) {
+const compute_median = (collection) => {
   collection.sort((x, y) => x - y);
 
   if (collection.length === 0) {
@@ -11,11 +11,11 @@ function compute_median(collection) {
     return Math.ceil((parseFloat(collection[i - 1]) + parseFloat(collection[i])) / 2);
   }
 }
-var calculate_median = function (collection) {
-  var evenArray = [];
-  for (var i = 1; i < collection.length; i += 2) {
-    evenArray.push(collection[i]);
-  }
+const calculate_median = (collection) => {
+  let evenArray = [];
+  collection.forEach((value) => {
+    evenArray.push(value);
+  });
   return compute_median(evenArray);
 };
 module.exports = calculate_median;

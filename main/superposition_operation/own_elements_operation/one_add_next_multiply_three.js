@@ -1,8 +1,8 @@
 'use strict';
-function one_add_next_multiply_three(collection){
-  var result = [];
-  for (var i = 0; i < collection.length - 1; i++) {
-    result.push((collection[i]+collection[i+1])*3);
+const one_add_next_multiply_three = (collection) => {
+  let result = [];
+  for (let i = 0, len = collection.length - 1; i < len; i++) {
+    result.push((collection[i] + collection[i + 1]) * 3);
   }
   return result;
 }

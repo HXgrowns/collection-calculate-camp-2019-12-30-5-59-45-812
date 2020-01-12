@@ -1,11 +1,11 @@
 'use strict';
-var letters = ["z", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k",
+const letters = ["z", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k",
   "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y"];
 
-function decTo26(num) {
-  var data = [];
+const decTo26 = (num) => {
+  let data = [];
   while (num > 0) {
-    var mod = num % 26;
+    let mod = num % 26;
     num = Math.floor(num / 26);
     if (mod === 0 && num > 0) {
       num--;
@@ -14,9 +14,10 @@ function decTo26(num) {
   }
   return data.join("");
 }
-var number_map_to_word = function (collection) {
-  var result = [];
-  for (var i of collection) {
+
+const number_map_to_word = (collection) => {
+  let result = [];
+  for (let i of collection) {
     result.push(decTo26(i));
   }
   return result;

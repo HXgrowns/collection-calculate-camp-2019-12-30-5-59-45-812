@@ -1,18 +1,18 @@
 'use strict';
 
-function compare_collections(collection_a, collection_b) {
+const compare_collections = (collection_a, collection_b) => {
   if (collection_a.length !== collection_b.length) {
     return false;
   }
-  var flag;
-  for (var i = 0, len = collection_a.length; i < len; i++) {
-    if (collection_a[i] === collection_b[i]) {
+  let flag;
+  collection_a.forEach((value, index) => {
+    if (value === collection_b[index]) {
       flag = true;
     } else {
       flag = false;
       return flag;
     }
-  }
+  });
   return flag;
 }
 

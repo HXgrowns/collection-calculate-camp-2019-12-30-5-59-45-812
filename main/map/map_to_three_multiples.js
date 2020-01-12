@@ -1,7 +1,7 @@
 'use strict';
-var map_to_three_multiples = function(collections){
-  var result = [];
-  for (var i of collections) {
+const map_to_three_multiples = (collections) => {
+  let result = [];
+  for (let i of collections) {
     result.push(i * 3);
   }
   return result;

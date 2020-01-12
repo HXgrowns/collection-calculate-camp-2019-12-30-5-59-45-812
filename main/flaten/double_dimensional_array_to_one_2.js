@@ -1,15 +1,15 @@
 'use strict';
 
-function double_to_one(collection) {
-  var oneArray = collection.reduce(function (a,b) {
+const double_to_one = (collection) => {
+  let oneArray = collection.reduce((a, b) => {
     return a.concat(b);
-  },[]);
-  var map = new Map();
-  for (var i = 0, len = oneArray.length; i < len; i++) {
-    map.set(oneArray[i], 1);
-  }
-  var result = [];
-  for (var key of map.keys()) {
+  }, []);
+  let map = new Map();
+  oneArray.forEach((value) => {
+    map.set(value, 1);
+  });
+  let result = [];
+  for (let key of map.keys()) {
     result.push(key);
   }
   return result;

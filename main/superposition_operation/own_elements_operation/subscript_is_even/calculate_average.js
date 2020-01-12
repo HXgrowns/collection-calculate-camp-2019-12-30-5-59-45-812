@@ -1,11 +1,11 @@
 'use strict';
-var calculate_average = function(collection){
-  var count = 0;
-  var sum = 0;
-  for (var i = 1; i < collection.length; i += 2) {
-    sum += collection[i];
+const calculate_average = (collection) => {
+  let count = 0;
+  let sum = 0;
+  collection.forEach((value) => {
+    sum += value;
     count++;
-  }
-  return sum / count;
+  });
+  return Math.round(sum / count);
 };
 module.exports = calculate_average;

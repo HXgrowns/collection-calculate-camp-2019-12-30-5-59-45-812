@@ -1,11 +1,11 @@
 'use strict';
-var letters = ["z", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k",
+const letters = ["z", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k",
   "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y"];
 
-function decTo26(num) {
-  var data = [];
+const decTo26 = (num) => {
+  let data = [];
   while (num > 0) {
-    var mod = num % 26;
+    let mod = num % 26;
     num = Math.floor(num / 26);
     if (mod === 0 && num > 0) {
       num--;
@@ -15,9 +15,8 @@ function decTo26(num) {
   return data.join("");
 }
 
-function compute_median(collection) {
+const compute_median = (collection) => {
   collection.sort((x, y) => x - y);
-
   if (collection.length === 0) {
     return 0;
   } else if (collection.length % 2 === 1) {
@@ -28,8 +27,8 @@ function compute_median(collection) {
   }
 }
 
-function median_to_letter(collection) {
-  var median = compute_median(collection);
+const median_to_letter = (collection) => {
+  let median = compute_median(collection);
   return decTo26(median);
 }
 

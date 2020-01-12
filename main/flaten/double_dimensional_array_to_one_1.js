@@ -1,9 +1,9 @@
 'use strict';
 
-function double_to_one(collection) {
-  var result = collection.reduce(function (a,b) {
+const double_to_one = (collection) => {
+  let result = collection.reduce((a, b) => {
     return a.concat(b);
-  },[]);
+  }, []);
   return result;
 }
 

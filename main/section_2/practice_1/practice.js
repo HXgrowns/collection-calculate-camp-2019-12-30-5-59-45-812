@@ -1,9 +1,9 @@
-function count_same_elements(collection) {
-  var result = [];
-  for (var i = 0, len = collection.length; i < len; i++) {
-    var obj = {};
-    obj.key = collection[i];
-    for (var j = 0, len2 = result.length; j < len2; j++) {
+const count_same_elements = (collection) => {
+  let result = [];
+  collection.forEach((value1) => {
+    let = obj = {};
+    obj.key = value1;
+    for (let j = 0, len = result.length; j < len; j++) {
       if (result[j].key === obj.key) {
         result[j].count++;
         obj.count = result[j].count;
@@ -14,7 +14,7 @@ function count_same_elements(collection) {
       obj.count = 1;
       result.push(obj);
     }
-  }
+  });
   return result;
 }
 
